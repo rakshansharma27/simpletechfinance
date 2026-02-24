@@ -47,3 +47,22 @@ To run this project locally on your machine:
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/rakshansharma27/simpletechfinance.git](https://github.com/rakshansharma27/simpletechfinance.git)
+
+2. **Navigate to the project directory:**
+
+Bash
+cd simpletechfinance
+
+3. **Open the project:**
+Simply open the index.html file in your preferred web browser, or use a local development server like VS Code's Live Server extension for hot reloading.
+
+**📬 Contact & Links**
+**Developer / Agency:** Alex (AI Automation Specialist)
+
+**Instagram:** @automation_by_alex
+
+**Official Domain:** simpletechfinance.site
+
+<div align="center">
+<i>Made with ❤️ in India. Built to empower local businesses with AI.</i>
+</div>
