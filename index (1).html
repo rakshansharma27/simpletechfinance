@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AI Automation By Alex — AI Chatbots & Websites for Indian Businesses</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --bg:      #0a0612;
+  --surface: #0d0a1f;
+  --card:    #110a22;
+  --border:  #2a1a4a;
+  --accent:  #7c3aed;
+  --accent2: #a78bfa;
+  --text:    #e2d9f3;
+  --muted:   #6b5a8a;
+  --ff-h:    'Syne', sans-serif;
+  --ff-b:    'DM Sans', sans-serif;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-b);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 10% 5%,  #2d126055, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 90% 90%,  #0f0a2e55, transparent 60%),
+    radial-gradient(ellipse 35% 35% at 55% 45%,  #7c3aed18, transparent 70%);
+  animation: bgShift 14s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  from { opacity:1; filter:hue-rotate(0deg); }
+  to   { opacity:.8; filter:hue-rotate(20deg); }
+}
+
+body::after {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(#ffffff03 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff03 1px, transparent 1px);
+  background-size:60px 60px;
+}
+
+section, nav, footer { position:relative; z-index:1; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:999;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 6%; height:70px;
+  background:#0a0612cc; backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  transition:all .3s;
+}
+
+.nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+
+.nav-logo-icon {
+  width:40px; height:40px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius:10px; display:flex; align-items:center; justify-content:center;
+  font-size:20px; box-shadow:0 0 20px #7c3aed55;
+}
+
+.nav-logo-text {
+  font-family:var(--ff-h); font-size:18px; font-weight:800; color:var(--text);
+}
+
+.nav-logo-text span { color:var(--accent2); }
+
+.nav-links { display:flex; gap:32px; list-style:none; }
+.nav-links a {
+  text-decoration:none; color:var(--muted); font-size:14px; font-weight:500;
+  transition:color .2s;
+}
+.nav-links a:hover { color:var(--accent2); }
+
+.nav-cta {
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:white !important; padding:9px 22px; border-radius:999px;
+  font-weight:700 !important; font-size:13px !important;
+  box-shadow:0 0 20px #7c3aed44; transition:all .2s !important;
+}
+.nav-cta:hover { transform:translateY(-1px); box-shadow:0 0 32px #7c3aed66 !important; }
+
+.hamburger {
+  display:none; flex-direction:column; gap:5px; cursor:pointer;
+  background:none; border:none; padding:4px;
+}
+.hamburger span { width:24px; height:2px; background:var(--text); border-radius:2px; }
+
+/* ── HERO ── */
+#hero {
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  padding:120px 6% 80px; text-align:center;
+}
+
+.hero-inner { max-width:800px; margin:0 auto; }
+
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#1a0a3a88; border:1px solid #7c3aed44;
+  padding:8px 20px; border-radius:999px;
+  font-size:13px; color:var(--accent2); font-weight:600;
+  letter-spacing:.5px; text-transform:uppercase;
+  margin-bottom:28px; animation:fadeUp .7s .1s both;
+}
+
+.badge-dot {
+  width:7px; height:7px; background:var(--accent2);
+  border-radius:50%; animation:blink 2s infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+h1.hero-h1 {
+  font-family:var(--ff-h);
+  font-size:clamp(38px,8vw,82px);
+  font-weight:800; line-height:1.0;
+  letter-spacing:-3px; color:var(--text);
+  margin-bottom:20px; animation:fadeUp .7s .2s both;
+}
+
+h1.hero-h1 .g {
+  background:linear-gradient(135deg, var(--accent), var(--accent2), #c4b5fd);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.hero-sub {
+  font-size:18px; color:var(--muted);
+  max-width:520px; margin:0 auto 36px;
+  animation:fadeUp .7s .3s both;
+}
+
+.hero-btns {
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  animation:fadeUp .7s .4s both;
+}
+
+.btn-p {
+  display:inline-flex; align-items:center; gap:8px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:white; padding:14px 30px; border-radius:999px;
+  font-family:var(--ff-b); font-size:15px; font-weight:700;
+  text-decoration:none; transition:all .2s;
+  box-shadow:0 0 32px #7c3aed44;
+}
+.btn-p:hover { transform:translateY(-2px); box-shadow:0 0 48px #7c3aed66; }
+
+.btn-s {
+  display:inline-flex; align-items:center; gap:8px;
+  background:transparent; color:var(--text);
+  padding:14px 30px; border-radius:999px;
+  border:1px solid var(--border);
+  font-family:var(--ff-b); font-size:15px; font-weight:600;
+  text-decoration:none; transition:all .2s;
+}
+.btn-s:hover { border-color:var(--accent2); color:var(--accent2); transform:translateY(-2px); }
+
+.hero-stats {
+  display:flex; justify-content:center; gap:48px; flex-wrap:wrap;
+  margin-top:64px; padding-top:48px;
+  border-top:1px solid var(--border);
+  animation:fadeUp .7s .5s both;
+}
+
+.stat-num {
+  font-family:var(--ff-h); font-size:34px; font-weight:800;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  background-clip:text; line-height:1;
+}
+.stat-label { font-size:13px; color:var(--muted); margin-top:6px; text-transform:uppercase; letter-spacing:.5px; }
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(28px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ── SECTIONS ── */
+section { padding:100px 6%; }
+
+.section-label {
+  font-size:12px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; color:var(--accent2); margin-bottom:12px;
+}
+
+.section-title {
+  font-family:var(--ff-h); font-size:clamp(26px,5vw,46px);
+  font-weight:800; line-height:1.1; letter-spacing:-1px;
+  color:var(--text); margin-bottom:14px;
+}
+
+.section-sub {
+  font-size:17px; color:var(--muted); max-width:520px; margin-bottom:52px;
+}
+
+/* ── SERVICES ── */
+#services { background:var(--surface); }
+
+.services-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:20px;
+}
+
+.svc-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:16px; padding:28px; transition:all .3s;
+  position:relative; overflow:hidden;
+}
+
+.svc-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg, var(--accent), var(--accent2));
+  transform:scaleX(0); transform-origin:left; transition:transform .3s;
+}
+
+.svc-card:hover { transform:translateY(-6px); border-color:#7c3aed44; }
+.svc-card:hover::before { transform:scaleX(1); }
+
+.svc-icon { font-size:36px; margin-bottom:16px; }
+.svc-title { font-family:var(--ff-h); font-size:18px; font-weight:700; margin-bottom:8px; }
+.svc-desc  { font-size:14px; color:var(--muted); line-height:1.6; }
+
+/* ── PRICING ── */
+#pricing {}
+
+.pricing-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:22px;
+}
+
+.price-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:20px; padding:34px 26px; position:relative;
+  transition:all .3s;
+}
+
+.price-card:hover { transform:translateY(-6px); }
+
+.price-card.hot {
+  border-color:var(--accent);
+  background:linear-gradient(160deg, #1a0a3a, #110a22);
+  box-shadow:0 0 60px #7c3aed22;
+}
+
+.price-pop {
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:white; font-size:11px; font-weight:700;
+  padding:5px 18px; border-radius:999px;
+  letter-spacing:.5px; text-transform:uppercase; white-space:nowrap;
+}
+
+.price-plan {
+  font-size:12px; text-transform:uppercase; letter-spacing:1px;
+  color:var(--muted); font-weight:700; margin-bottom:14px;
+}
+
+.price-amount {
+  font-family:var(--ff-h); font-size:44px; font-weight:800;
+  color:var(--text); line-height:1; margin-bottom:4px;
+}
+
+.price-usd { font-size:14px; color:var(--muted); margin-bottom:6px; }
+.price-desc { font-size:13px; color:var(--muted); margin-bottom:24px; }
+
+.price-features {
+  list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px;
+}
+
+.price-features li {
+  display:flex; align-items:flex-start; gap:10px; font-size:13px; color:var(--muted);
+}
+
+.price-features li::before {
+  content:'✓'; min-width:20px; height:20px;
+  background:#1a0a3a; border:1px solid #7c3aed44;
+  border-radius:6px; display:flex; align-items:center; justify-content:center;
+  font-size:11px; color:var(--accent2); font-weight:700; flex-shrink:0; margin-top:1px;
+}
+
+.price-tag {
+  font-size:11px; color:var(--accent2); background:#1a0a3a;
+  border:1px solid #7c3aed33; padding:4px 10px;
+  border-radius:999px; display:inline-block; margin-bottom:20px;
+}
+
+.price-btn {
+  display:block; width:100%; padding:13px; border-radius:12px;
+  text-align:center; font-family:var(--ff-b); font-size:14px;
+  font-weight:700; text-decoration:none; transition:all .2s;
+  cursor:pointer; border:none;
+}
+
+.price-btn-outline {
+  background:transparent; border:1px solid var(--border); color:var(--text);
+}
+.price-btn-outline:hover { border-color:var(--accent2); color:var(--accent2); }
+
+.price-btn-fill {
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:white; box-shadow:0 0 24px #7c3aed44;
+}
+.price-btn-fill:hover { box-shadow:0 0 40px #7c3aed66; transform:translateY(-1px); }
+
+/* Custom plan */
+.custom-plan {
+  margin-top:24px;
+  background:var(--card); border:1px dashed #7c3aed55;
+  border-radius:16px; padding:28px; text-align:center;
+}
+.custom-plan h3 { font-family:var(--ff-h); font-size:22px; font-weight:700; margin-bottom:8px; }
+.custom-plan p  { color:var(--muted); font-size:15px; margin-bottom:20px; }
+
+/* ── PORTFOLIO ── */
+#portfolio { background:var(--surface); }
+
+.portfolio-grid {
+  display:grid; grid-template-columns:repeat(2,1fr); gap:20px;
+}
+
+.port-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:16px; padding:28px; transition:all .3s;
+  display:flex; flex-direction:column; gap:12px;
+}
+.port-card:hover { transform:translateY(-5px); border-color:#7c3aed44; }
+
+.port-tag {
+  display:inline-flex; font-size:11px; font-weight:700;
+  padding:4px 12px; border-radius:999px; text-transform:uppercase;
+  letter-spacing:.5px; color:var(--accent2);
+  background:#1a0a3a; border:1px solid #7c3aed33;
+  width:fit-content;
+}
+
+.port-icon { font-size:36px; }
+.port-title { font-family:var(--ff-h); font-size:20px; font-weight:700; }
+.port-desc  { font-size:14px; color:var(--muted); line-height:1.6; }
+
+.port-results {
+  list-style:none; display:flex; flex-direction:column; gap:6px;
+  margin-top:4px;
+}
+.port-results li {
+  font-size:13px; color:var(--accent2); display:flex; align-items:center; gap:6px;
+}
+.port-results li::before { content:'→'; font-weight:700; }
+
+/* ── CHATBOT ── */
+#chatbot {}
+
+.chatbot-wrap {
+  display:grid; grid-template-columns:1fr 1.3fr; gap:52px; align-items:start;
+}
+
+.why-list {
+  display:flex; flex-direction:column; gap:14px; margin-top:28px;
+}
+
+.why-item {
+  display:flex; gap:12px; align-items:center;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:12px; padding:14px 18px;
+  font-size:14px; font-weight:500; transition:all .2s;
+}
+.why-item:hover { border-color:#7c3aed44; transform:translateX(4px); }
+.why-item span:first-child { font-size:20px; }
+
+/* Live chat widget */
+.chat-widget {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:20px; overflow:hidden; box-shadow:0 24px 64px #00000066;
+}
+
+.chat-header {
+  background:#0d0a1f; border-bottom:1px solid var(--border);
+  padding:16px 20px; display:flex; align-items:center; gap:12px;
+}
+
+.chat-av {
+  width:38px; height:38px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius:10px; display:flex; align-items:center; justify-content:center;
+  font-size:18px; box-shadow:0 0 16px #7c3aed55;
+}
+
+.chat-hname { font-weight:700; font-size:15px; }
+.chat-hstatus {
+  font-size:12px; color:var(--accent2);
+  display:flex; align-items:center; gap:5px;
+}
+.online { width:6px; height:6px; background:var(--accent2); border-radius:50%; animation:blink 2s infinite; }
+
+.chat-msgs {
+  padding:18px; min-height:300px; max-height:360px;
+  overflow-y:auto; display:flex; flex-direction:column; gap:12px;
+}
+.chat-msgs::-webkit-scrollbar { width:3px; }
+.chat-msgs::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+
+.cmsg { display:flex; flex-direction:column; max-width:84%; }
+.cmsg.bot  { align-self:flex-start; }
+.cmsg.user { align-self:flex-end; align-items:flex-end; }
+
+.cbubble {
+  padding:11px 15px; border-radius:14px;
+  font-size:14px; line-height:1.6;
+}
+.bot  .cbubble { background:#0d0520; border:1px solid var(--border); border-bottom-left-radius:4px; }
+.user .cbubble { background:#1a0a3a; border:1px solid #7c3aed33; border-bottom-right-radius:4px; }
+
+.ctime { font-size:10px; color:var(--muted); margin-top:4px; padding:0 4px; }
+
+.typing-dots {
+  display:flex; align-items:center; gap:5px;
+  padding:12px 16px;
+  background:#0d0520; border:1px solid var(--border);
+  border-radius:14px; border-bottom-left-radius:4px;
+  align-self:flex-start;
+}
+.typing-dots span {
+  width:7px; height:7px; background:var(--muted);
+  border-radius:50%; animation:tdot 1.2s infinite;
+}
+.typing-dots span:nth-child(2) { animation-delay:.2s; }
+.typing-dots span:nth-child(3) { animation-delay:.4s; }
+@keyframes tdot { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-6px)} }
+
+.chat-inp-row {
+  padding:14px 16px; border-top:1px solid var(--border);
+  display:flex; gap:10px; align-items:center; background:#0d0a1f;
+}
+
+.chat-inp {
+  flex:1; background:#080612; border:1px solid var(--border);
+  border-radius:10px; padding:10px 14px; color:var(--text);
+  font-family:var(--ff-b); font-size:14px; outline:none; transition:border-color .2s;
+}
+.chat-inp:focus { border-color:var(--accent); }
+.chat-inp::placeholder { color:var(--muted); }
+
+.chat-send {
+  width:40px; height:40px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  border:none; border-radius:10px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all .2s; flex-shrink:0;
+}
+.chat-send:hover { transform:scale(1.08); }
+.chat-send svg { width:16px; height:16px; fill:white; }
+
+/* ── WHY ALEX ── */
+#why { background:var(--surface); }
+
+.why-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+}
+
+.why-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:14px; padding:24px; text-align:center;
+  transition:all .3s;
+}
+.why-card:hover { transform:translateY(-5px); border-color:#7c3aed44; }
+.why-card-icon { font-size:34px; margin-bottom:12px; }
+.why-card-title { font-family:var(--ff-h); font-size:16px; font-weight:700; margin-bottom:6px; }
+.why-card-desc  { font-size:13px; color:var(--muted); line-height:1.6; }
+
+/* ── CONTACT ── */
+#contact {}
+
+.contact-wrap {
+  display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start;
+}
+
+.contact-cards { display:flex; flex-direction:column; gap:14px; margin-top:8px; }
+
+.ccard {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:14px; padding:18px 20px;
+  display:flex; gap:14px; align-items:center; transition:all .2s;
+}
+.ccard:hover { border-color:#7c3aed44; transform:translateX(4px); }
+
+.ccard-icon {
+  width:42px; height:42px; flex-shrink:0;
+  background:#1a0a3a; border:1px solid #7c3aed33;
+  border-radius:10px; display:flex; align-items:center;
+  justify-content:center; font-size:20px;
+}
+.ccard-label { font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+.ccard-val   { font-size:15px; font-weight:600; color:var(--text); margin-top:2px; }
+.ccard-val a { color:var(--accent2); text-decoration:none; }
+.ccard-val a:hover { text-decoration:underline; }
+
+/* Form */
+.lead-form { display:flex; flex-direction:column; gap:14px; }
+
+.form-label { font-size:13px; color:var(--muted); font-weight:500; margin-bottom:5px; display:block; }
+
+.form-inp, .form-sel, .form-ta {
+  width:100%; background:var(--card); border:1px solid var(--border);
+  border-radius:10px; padding:12px 15px; color:var(--text);
+  font-family:var(--ff-b); font-size:14px; outline:none; transition:border-color .2s;
+}
+.form-inp:focus, .form-sel:focus, .form-ta:focus { border-color:var(--accent); }
+.form-inp::placeholder, .form-ta::placeholder { color:var(--muted); }
+.form-sel option { background:#110a22; }
+.form-ta { resize:vertical; min-height:100px; }
+
+.form-submit {
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:white; border:none; border-radius:12px; padding:14px;
+  font-family:var(--ff-b); font-size:15px; font-weight:700;
+  cursor:pointer; transition:all .2s;
+  box-shadow:0 0 24px #7c3aed33;
+}
+.form-submit:hover { transform:translateY(-2px); box-shadow:0 0 40px #7c3aed55; }
+
+/* ── FOOTER ── */
+footer {
+  border-top:1px solid var(--border);
+  padding:44px 6%;
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;
+}
+
+.footer-brand { font-family:var(--ff-h); font-size:20px; font-weight:800; }
+.footer-brand span { color:var(--accent2); }
+
+.footer-links { display:flex; gap:24px; flex-wrap:wrap; }
+.footer-links a { text-decoration:none; color:var(--muted); font-size:14px; transition:color .2s; }
+.footer-links a:hover { color:var(--accent2); }
+
+.footer-copy { font-size:13px; color:var(--muted); }
+
+/* ── MOBILE ── */
+@media(max-width:900px) {
+  .services-grid, .pricing-grid, .why-grid { grid-template-columns:1fr; }
+  .portfolio-grid, .chatbot-wrap, .contact-wrap { grid-template-columns:1fr; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  h1.hero-h1 { letter-spacing:-2px; }
+  .hero-stats { gap:24px; }
+}
+
+/* Reveal */
+.reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo">
+    <div class="nav-logo-icon">🤖</div>
+    <span class="nav-logo-text">Alex<span>'s AI</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#chatbot">AI Demo</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">🚀 Free Demo</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-badge"><div class="badge-dot"></div>AI Automation Specialist — India</div>
+
+    <h1 class="hero-h1">
+      Smart AI Bots &<br>
+      <span class="g">Modern Websites</span><br>
+      for Your Business
+    </h1>
+
+    <p class="hero-sub">
+      I build AI chatbots and professional websites for gyms, salons, coaching institutes and local businesses across India — starting at just ₹999.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">🚀 Book FREE Demo</a>
+      <a href="#chatbot" class="btn-s">🤖 Try AI Bot Live</a>
+    </div>
+
+    <div class="hero-stats">
+      <div><div class="stat-num">₹999</div><div class="stat-label">Starting Price</div></div>
+      <div><div class="stat-num">2–4</div><div class="stat-label">Days Delivery</div></div>
+      <div><div class="stat-num">24/7</div><div class="stat-label">Bot Uptime</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
+    <div class="section-label">What I Build</div>
+    <h2 class="section-title">My Services</h2>
+    <p class="section-sub">Everything your business needs to automate, grow, and never miss a customer.</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc-card reveal">
+      <div class="svc-icon">🤖</div>
+      <div class="svc-title">AI Chatbot Development</div>
+      <div class="svc-desc">Custom trained for YOUR business. Answers questions, captures leads, and works 24/7 — even while you sleep.</div>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🌐</div>
+      <div class="svc-title">Modern Website Development</div>
+      <div class="svc-desc">Glassmorphism design, mobile responsive, fast loading. Professional websites that impress every visitor.</div>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">📱</div>
+      <div class="svc-title">WhatsApp Automation</div>
+      <div class="svc-desc">Auto replies on WhatsApp, lead capture, instant notifications. Never miss a WhatsApp inquiry again.</div>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">📞</div>
+      <div class="svc-title">Voice Call Chatbot</div>
+      <div class="svc-desc">AI powered voice assistant that handles incoming calls automatically. Answer 100 calls without lifting a finger.</div>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">🎯</div>
+      <div class="svc-title">Lead Generation System</div>
+      <div class="svc-desc">Capture name, phone, email from every visitor. Your bot collects leads 24/7 and sends them straight to WhatsApp.</div>
+    </div>
+    <div class="svc-card reveal">
+      <div class="svc-icon">⚙️</div>
+      <div class="svc-title">Complete Business Automation</div>
+      <div class="svc-desc">Full automation package — chatbot + website + WhatsApp + voice + leads. Your business runs itself.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="reveal" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
+    <div class="section-label">Simple Pricing</div>
+    <h2 class="section-title">Pick Your Plan</h2>
+    <p class="section-sub">Transparent pricing. No hidden charges. FREE demo before any payment.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <!-- Basic -->
+    <div class="price-card reveal">
+      <div class="price-plan">Basic</div>
+      <div class="price-amount">₹999</div>
+      <div class="price-usd">~$10 USD</div>
+      <div class="price-tag">⏱ Delivery: 2 Days</div>
+      <ul class="price-features">
+        <li>Simple AI Chatbot</li>
+        <li>Modern Website</li>
+        <li>Customer FAQ Automation</li>
+        <li>Lead Capture System</li>
+        <li>2 Revisions</li>
+      </ul>
+      <div class="price-desc" style="font-size:12px;margin-bottom:16px;">Best for new businesses getting started</div>
+      <a href="#contact" class="price-btn price-btn-outline">Get Started →</a>
+    </div>
+
+    <!-- Standard -->
+    <div class="price-card hot reveal">
+      <div class="price-pop">⭐ Most Popular</div>
+      <div class="price-plan">Standard</div>
+      <div class="price-amount">₹1,999</div>
+      <div class="price-usd">~$20 USD</div>
+      <div class="price-tag">⏱ Delivery: 3 Days</div>
+      <ul class="price-features">
+        <li>Modern Website</li>
+        <li>Advanced AI Chatbot</li>
+        <li>Customer Support Automation</li>
+        <li>Lead Generation System</li>
+        <li>WhatsApp Integration</li>
+        <li>3 Revisions</li>
+      </ul>
+      <div class="price-desc" style="font-size:12px;margin-bottom:16px;">Best for businesses wanting more leads</div>
+      <a href="#contact" class="price-btn price-btn-fill">Get Started →</a>
+    </div>
+
+    <!-- Premium -->
+    <div class="price-card reveal">
+      <div class="price-plan">Premium</div>
+      <div class="price-amount">₹2,999</div>
+      <div class="price-usd">~$30 USD</div>
+      <div class="price-tag">⏱ Delivery: 4 Days</div>
+      <ul class="price-features">
+        <li>Modern Website</li>
+        <li>Advanced AI Chatbot</li>
+        <li>Lead Generation System</li>
+        <li>Voice Call Chatbot</li>
+        <li>Complete Business Automation</li>
+        <li>Unlimited Revisions</li>
+        <li>1 Month Free Support</li>
+      </ul>
+      <div class="price-desc" style="font-size:12px;margin-bottom:16px;">Best for complete business automation</div>
+      <a href="#contact" class="price-btn price-btn-outline">Get Started →</a>
+    </div>
+  </div>
+
+  <!-- Custom plan -->
+  <div class="custom-plan reveal">
+    <h3>🎨 Need Something Custom?</h3>
+    <p>Share your requirements and I'll create a special package just for you — at the best price.</p>
+    <a href="#contact" class="btn-p" style="display:inline-flex;">💬 Let's Talk →</a>
+  </div>
+</section>
+
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="reveal" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
+    <div class="section-label">My Work</div>
+    <h2 class="section-title">Portfolio Projects</h2>
+    <p class="section-sub">Real projects built for real businesses. Every bot trained specifically for the client.</p>
+  </div>
+  <div class="portfolio-grid">
+    <div class="port-card reveal">
+      <span class="port-tag">Gym & Fitness</span>
+      <div class="port-icon">🏋️</div>
+      <div class="port-title">FitZone Gym Chatbot</div>
+      <div class="port-desc">Lead generation bot that captures gym inquiries 24/7. Answers membership queries, promotes free trial, collects contact details.</div>
+      <ul class="port-results">
+        <li>24/7 automatic lead capture</li>
+        <li>Membership pricing automation</li>
+        <li>Free trial booking system</li>
+      </ul>
+    </div>
+    <div class="port-card reveal">
+      <span class="port-tag">Salon & Spa</span>
+      <div class="port-icon">💇</div>
+      <div class="port-title">GlowUp Salon Booking Bot</div>
+      <div class="port-desc">Appointment booking bot that shows services, prices, and current offers. Customers book appointments without calling.</div>
+      <ul class="port-results">
+        <li>Zero missed bookings</li>
+        <li>Automatic appointment scheduling</li>
+        <li>Service menu & pricing display</li>
+      </ul>
+    </div>
+    <div class="port-card reveal">
+      <span class="port-tag">Coaching & Education</span>
+      <div class="port-icon">📚</div>
+      <div class="port-title">BrightMind Coaching Bot</div>
+      <div class="port-desc">Student enquiry bot that handles course details, batch timings, fee structure, and free demo class booking automatically.</div>
+      <ul class="port-results">
+        <li>Automated student enquiries</li>
+        <li>Course & fee info on demand</li>
+        <li>Free demo class booking</li>
+      </ul>
+    </div>
+    <div class="port-card reveal">
+      <span class="port-tag">This Website</span>
+      <div class="port-icon">🤖</div>
+      <div class="port-title">AI Automation By Alex</div>
+      <div class="port-desc">My own business website — modern glassmorphism design, fully mobile responsive, with AI chatbot integrated and lead capture system built in.</div>
+      <ul class="port-results">
+        <li>Modern glassmorphism design</li>
+        <li>AI chatbot integrated</li>
+        <li>Live at simpletechfinance.site</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- AI CHATBOT DEMO -->
+<section id="chatbot">
+  <div class="chatbot-wrap">
+    <div class="reveal">
+      <div class="section-label">Live Demo</div>
+      <h2 class="section-title">Talk to My<br>AI Bot Now</h2>
+      <p class="section-sub">This is the same type of bot I build for my clients. Ask it anything about my services, pricing, or portfolio.</p>
+      <div class="why-list">
+        <div class="why-item"><span>⚡</span><span>Instant replies — no waiting</span></div>
+        <div class="why-item"><span>🕐</span><span>Available 24/7, never sleeps</span></div>
+        <div class="why-item"><span>🌐</span><span>Speaks Hindi, English & Hinglish</span></div>
+        <div class="why-item"><span>🎯</span><span>Trained specifically on your business</span></div>
+        <div class="why-item"><span>📱</span><span>Works on any phone or computer</span></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="chat-widget">
+        <div class="chat-header">
+          <div class="chat-av">🤖</div>
+          <div>
+            <div class="chat-hname">Alex's AI Assistant</div>
+            <div class="chat-hstatus"><div class="online"></div> Online — Reply karta hoon instantly</div>
+          </div>
+        </div>
+
+        <div class="chat-msgs" id="chatMsgs">
+          <div class="cmsg bot">
+            <div class="cbubble">🙏 Namaste! I'm Alex's AI Assistant.<br><br>Main aapko AI chatbots, websites, aur automation services ke baare mein bataunga.<br><br>Kya help chahiye? 🚀</div>
+            <div class="ctime">Just now</div>
+          </div>
+        </div>
+
+        <div class="chat-inp-row">
+          <input class="chat-inp" id="chatInp" placeholder="Services, pricing, portfolio ke baare mein poocho..." />
+          <button class="chat-send" onclick="sendMsg()">
+            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:12px;">
+        💡 Try asking: "Pricing kya hai?" or "What services do you offer?"<br>
+        <a href="YOUR_STREAMLIT_BOT_LINK" target="_blank" style="color:var(--accent2);">Open full AI bot →</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY ALEX -->
+<section id="why">
+  <div class="reveal" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
+    <div class="section-label">Why Choose Me</div>
+    <h2 class="section-title">Why Alex?</h2>
+    <p class="section-sub">College student with professional quality — best combination for Indian small businesses.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal"><div class="why-card-icon">💰</div><div class="why-card-title">Starts at ₹999</div><div class="why-card-desc">Professional AI solutions at student-friendly prices. No big agency fees.</div></div>
+    <div class="why-card reveal"><div class="why-card-icon">⚡</div><div class="why-card-title">2–4 Day Delivery</div><div class="why-card-desc">Fast turnaround. Your bot is live and capturing leads within days, not weeks.</div></div>
+    <div class="why-card reveal"><div class="why-card-icon">🆓</div><div class="why-card-title">FREE Demo First</div><div class="why-card-desc">See the live demo before paying a single rupee. Zero risk, zero commitment.</div></div>
+    <div class="why-card reveal"><div class="why-card-icon">📱</div><div class="why-card-title">WhatsApp Support</div><div class="why-card-desc">Direct WhatsApp access. I'm always reachable and respond within 2 hours.</div></div>
+    <div class="why-card reveal"><div class="why-card-icon">🇮🇳</div><div class="why-card-title">Made for India</div><div class="why-card-desc">Speaks Hindi & Hinglish. Understands Indian business needs. Built for local markets.</div></div>
+    <div class="why-card reveal"><div class="why-card-icon">✅</div><div class="why-card-title">100% Satisfaction</div><div class="why-card-desc">Not happy? I'll revise until you love it. Your satisfaction is guaranteed.</div></div>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Book Your<br>FREE Demo</h2>
+      <p class="section-sub">30 minute free demo call. See a live bot, discuss your needs, get a custom quote. Zero payment needed.</p>
+      <div class="contact-cards">
+        <div class="ccard">
+          <div class="ccard-icon">🌐</div>
+          <div>
+            <div class="ccard-label">Website</div>
+            <div class="ccard-val"><a href="https://simpletechfinance.site" target="_blank">simpletechfinance.site</a></div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon">📸</div>
+          <div>
+            <div class="ccard-label">Instagram</div>
+            <div class="ccard-val"><a href="https://instagram.com/automation_by_alex" target="_blank">@automation_by_alex</a></div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon">⏰</div>
+          <div>
+            <div class="ccard-label">Response Time</div>
+            <div class="ccard-val">Within 2 hours</div>
+          </div>
+        </div>
+        <div class="ccard">
+          <div class="ccard-icon">🆓</div>
+          <div>
+            <div class="ccard-label">Demo Call</div>
+            <div class="ccard-val">FREE — 30 minutes, no commitment</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="lead-form" id="leadForm">
+        <div>
+          <label class="form-label">Your Name *</label>
+          <input class="form-inp" id="lname" placeholder="Rahul Sharma" type="text"/>
+        </div>
+        <div>
+          <label class="form-label">Phone Number *</label>
+          <input class="form-inp" id="lphone" placeholder="+91 98765 43210" type="tel"/>
+        </div>
+        <div>
+          <label class="form-label">Business Type *</label>
+          <select class="form-sel" id="lbiz">
+            <option value="">Select your business...</option>
+            <option>Gym / Fitness Center</option>
+            <option>Salon / Spa</option>
+            <option>Coaching Institute</option>
+            <option>Restaurant / Cafe</option>
+            <option>Real Estate</option>
+            <option>Medical / Clinic</option>
+            <option>E-commerce / Shop</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label">Interested Plan</label>
+          <select class="form-sel" id="lplan">
+            <option value="">Select plan...</option>
+            <option>Basic — ₹999</option>
+            <option>Standard — ₹1,999 (Most Popular)</option>
+            <option>Premium — ₹2,999</option>
+            <option>Custom Plan</option>
+          </select>
+        </div>
+        <div>
+          <label class="form-label">Message (optional)</label>
+          <textarea class="form-ta" id="lmsg" placeholder="Koi bhi sawaal ho toh yahan likhein..."></textarea>
+        </div>
+        <button class="form-submit" onclick="submitLead()">🚀 Book FREE Demo Call</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">AI Automation By <span>Alex</span></div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#chatbot">AI Demo</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2026 AI Automation By Alex. Made with ❤️ in India.</div>
+</footer>
+
+
+<script>
+// ── Nav scroll ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').style.background =
+    window.scrollY > 50 ? '#0a0612f0' : '#0a0612cc';
+});
+
+// ── Mobile nav ──
+function toggleNav() {
+  const ul = document.querySelector('.nav-links');
+  const open = ul.style.display === 'flex';
+  ul.style.cssText = open ? '' :
+    'display:flex;flex-direction:column;position:absolute;top:70px;left:0;right:0;background:#0a0612f5;padding:24px;border-bottom:1px solid #2a1a4a;gap:20px;z-index:999;';
+}
+
+// ── Scroll reveal ──
+new IntersectionObserver((entries) => {
+  entries.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+}, { threshold: 0.1 }).observe
+? document.querySelectorAll('.reveal').forEach(el =>
+    new IntersectionObserver(([e]) => e.isIntersecting && el.classList.add('visible'),
+    { threshold: 0.1 }).observe(el)) : null;
+
+// ── Chat demo ──
+const alexReplies = {
+  price:     "Hamare plans bahut affordable hain! 💰\n\n• Basic: ₹999 (~$10)\n• Standard: ₹1,999 (~$20) ⭐ Most Popular\n• Premium: ₹2,999 (~$30)\n\nSabhi plans mein FREE demo pehle milta hai! Kaun sa plan acha laga?",
+  service:   "Main ye services deta hoon 🤖:\n\n1. AI Chatbot Development\n2. Modern Website Design\n3. WhatsApp Automation\n4. Voice Call Chatbot\n5. Lead Generation System\n\nKaun si service aapke kaam ki hai?",
+  portfolio: "Mere kuch projects hain 🏆:\n\n• FitZone Gym Bot — 24/7 lead capture\n• GlowUp Salon Bot — appointment booking\n• BrightMind Coaching Bot — student enquiries\n• Ye website — meri khud ki!\n\nKisi specific project ke baare mein jaanna chahte hain?",
+  delivery:  "Delivery bahut fast hai ⚡:\n\n• Basic Plan: 2 din mein ready\n• Standard Plan: 3 din mein ready\n• Premium Plan: 4 din mein ready\n\nAur payment ke baad kaam shuru! FREE demo pehle.",
+  demo:      "FREE demo ke liye neeche form fill karo! 🚀\n\nSirf 3 cheez chahiye:\n• Aapka naam\n• Phone number\n• Business type\n\nMain 2 ghante mein contact karunga! ✅",
+  whatsapp:  "Haan! WhatsApp Automation bhi available hai 📱\n\nIs mein milta hai:\n• Auto replies on WhatsApp\n• Lead capture via WhatsApp\n• Instant notifications to you\n\nStandard aur Premium plan mein included hai!",
+  hi:        "🙏 Namaste! Welcome to AI Automation By Alex!\n\nMain aapki kaise help kar sakta hoon?\n• Services ke baare mein jaanna hai?\n• Pricing dekhni hai?\n• FREE demo book karna hai?\n\nBatao! 😊",
+  default:   "Bahut achha sawaal! 😊\n\nMujhe aapki business ki zaroorat samajhni hai.\nKya aap FREE 30 minute demo call book kar sakte hain?\n\nForm fill karo neeche — main 2 ghante mein call karunga! 🚀"
+};
+
+function getAlexReply(msg) {
+  const m = msg.toLowerCase();
+  if (m.includes('price') || m.includes('cost') || m.includes('pricing') || m.includes('kitna') || m.includes('₹') || m.includes('plan')) return alexReplies.price;
+  if (m.includes('service') || m.includes('kya karte') || m.includes('what do') || m.includes('build') || m.includes('banaate')) return alexReplies.service;
+  if (m.includes('portfolio') || m.includes('project') || m.includes('work') || m.includes('kaam')) return alexReplies.portfolio;
+  if (m.includes('delivery') || m.includes('time') || m.includes('kitne din') || m.includes('fast') || m.includes('days')) return alexReplies.delivery;
+  if (m.includes('demo') || m.includes('book') || m.includes('call') || m.includes('contact') || m.includes('meet')) return alexReplies.demo;
+  if (m.includes('whatsapp') || m.includes('automation')) return alexReplies.whatsapp;
+  if (m.includes('hi') || m.includes('hello') || m.includes('hey') || m.includes('namaste') || m.includes('hii')) return alexReplies.hi;
+  return alexReplies.default;
+}
+
+function getTime() {
+  return new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'});
+}
+
+function addChatMsg(text, type) {
+  const box = document.getElementById('chatMsgs');
+  const d = document.createElement('div');
+  d.className = `cmsg ${type}`;
+  d.innerHTML = `<div class="cbubble">${text.replace(/\n/g,'<br>')}</div><div class="ctime">${getTime()}</div>`;
+  box.appendChild(d);
+  box.scrollTop = box.scrollHeight;
+}
+
+function showDots() {
+  const box = document.getElementById('chatMsgs');
+  const d = document.createElement('div');
+  d.className = 'typing-dots'; d.id = 'tdots';
+  d.innerHTML = '<span></span><span></span><span></span>';
+  box.appendChild(d); box.scrollTop = box.scrollHeight;
+}
+
+function hideDots() {
+  const d = document.getElementById('tdots');
+  if (d) d.remove();
+}
+
+function sendMsg() {
+  const inp = document.getElementById('chatInp');
+  const txt = inp.value.trim();
+  if (!txt) return;
+  inp.value = '';
+  addChatMsg(txt, 'user');
+  showDots();
+  setTimeout(() => { hideDots(); addChatMsg(getAlexReply(txt), 'bot'); }, 800 + Math.random()*500);
+}
+
+document.getElementById('chatInp').addEventListener('keypress', e => {
+  if (e.key === 'Enter') sendMsg();
+});
+
+// ── WhatsApp Lead Form ──
+function submitLead() {
+  const name  = document.getElementById('lname').value.trim();
+  const phone = document.getElementById('lphone').value.trim();
+  const biz   = document.getElementById('lbiz').value;
+  const plan  = document.getElementById('lplan').value;
+  const msg   = document.getElementById('lmsg').value.trim();
+
+  if (!name || !phone || !biz) {
+    alert('Please fill Name, Phone and Business Type!');
+    return;
+  }
+
+  // ── YOUR WHATSAPP NUMBER ──
+  const YOUR_WA = '919876543210'; // 🔁 Replace with YOUR number
+
+  const waText =
+`🤖 *New Lead — AI Automation By Alex!*
+
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+🏢 *Business:* ${biz}
+💡 *Plan Interest:* ${plan || 'Not selected'}
+💬 *Message:* ${msg || 'No message'}
+
+⏰ *Time:* ${new Date().toLocaleString('en-IN')}
+🌐 *Source:* Website Contact Form`;
+
+  window.open(`https://wa.me/${YOUR_WA}?text=${encodeURIComponent(waText)}`, '_blank');
+
+  document.getElementById('leadForm').innerHTML = `
+    <div style="text-align:center;padding:52px 24px;">
+      <div style="font-size:60px;margin-bottom:16px;">🎉</div>
+      <h3 style="font-family:'Syne',sans-serif;font-size:26px;margin-bottom:10px;color:#e2d9f3;">
+        Demo Booked!
+      </h3>
+      <p style="color:#6b5a8a;font-size:15px;line-height:1.8;">
+        Shukriya <strong style="color:#a78bfa">${name}</strong>! 🙏<br><br>
+        Alex will contact you at<br>
+        <strong style="color:#a78bfa">${phone}</strong> within <strong style="color:#a78bfa">2 hours</strong>.<br><br>
+        Meanwhile check out the AI demo above! 🤖
+      </p>
+    </div>`;
+}
+</script>
+</body>
+</html>
